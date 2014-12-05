@@ -1,6 +1,10 @@
 {
   "name": "talentrocket",
   "version": "0.0.0",
+  "main": "./lib/talentrocket.js",
+  "dependencies": {
+    "rest": "1.2.0"
+  },
   "ignore": [
     "**/.*",
     "node_modules",

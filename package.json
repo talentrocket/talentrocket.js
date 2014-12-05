@@ -16,12 +16,13 @@
   "main": "./lib/talentrocket.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/georgedrummond/talentrocket.git"
+    "url": "https://github.com/talentrocket/talentrocket.git"
   },
   "scripts": {
     "test": "gulp test"
   },
   "dependencies": {
+    "rest": "1.2.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
@@ -32,6 +33,7 @@
     "gulp-istanbul": "^0.3.1",
     "gulp-mocha": "^1.1.1",
     "gulp-util": "^3.0.0",
+    "gulp-concat": "2.4.2",
     "mocha": "^2.0.0",
     "sinon": "^1.9.1",
     "sinon-chai": "^2.5.0"
