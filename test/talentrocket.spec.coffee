@@ -12,21 +12,18 @@ chai.use require 'sinon-chai'
 describe 'talentrocket', ->
   describe 'setting api_key', ->
     before ->
-      talentrocket.api_key('securekey+++')
+      talentrocket.Config.set_api_key('securekey+++')
     
     it 'remains set', ->
-      expect(talentrocket.api_key).to.eql 'securekey+++'
+      expect(talentrocket.Config.api_key).to.eql 'securekey+++'
 
 describe 'Profile', ->
+
   describe 'find_by', ->
     json =
       name: 'George'
 
-    before ->
-      nock('https://api.talentrocket.io')
-          .get('/v1/profiles')
-          .reply(200, json)
-
     it 'return profile', ->
-      talentrocket.Profile.find_by (name: 'name'), (response) ->
+      talentrocket.Config.set_api_key('xxx')
+      talentrocket.Profile.find_by (name: 'georgedrummond'), (response) ->
         expect(response.entity).to.eql 33
