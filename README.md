@@ -1,8 +1,8 @@
 # talentrocket
 
-[![Dependency status](http://img.shields.io/david/georgedrummond/talentrocket.svg?style=flat)](https://david-dm.org/georgedrummond/talentrocket)
-[![devDependency Status](http://img.shields.io/david/dev/georgedrummond/talentrocket.svg?style=flat)](https://david-dm.org/georgedrummond/talentrocket#info=devDependencies)
-[![Build Status](http://img.shields.io/travis/georgedrummond/talentrocket.svg?style=flat&branch=master)](https://travis-ci.org/georgedrummond/talentrocket)
+[![Dependency status](http://img.shields.io/david/talentrocket/talentrocket.js.svg?style=flat)](https://david-dm.org/talentrocket/talentrocket.js)
+[![devDependency Status](http://img.shields.io/david/dev/talentrocket/talentrocket.js.svg?style=flat)](https://david-dm.org/talentrocket/talentrocket.js#info=devDependencies)
+[![Build Status](http://img.shields.io/travis/talentrocket/talentrocket.js.svg?style=flat&branch=master)](https://travis-ci.org/talentrocket/talentrocket.js)
 
 [![NPM](https://nodei.co/npm/talentrocket.svg?style=flat)](https://npmjs.org/package/talentrocket)
 
