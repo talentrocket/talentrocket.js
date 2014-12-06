@@ -14,7 +14,6 @@ class Request
       method: 'GET'
     
     rest(request).then (response) ->
-      console.log response
       callback(response)
 
 class Profile
@@ -35,7 +34,6 @@ class Project
     @json
 
   @find: (name) ->
-    console.log name
 
 exports.api_key = api_key
 exports.Profile = Profile
