@@ -13,11 +13,9 @@ class Request
     request = 
       path: "https://api.talentrocket.io/v1#{url}&access_token=#{Config.api_key}", 
       method: 'GET'
-
-    console.log request
     
     rest(request).then (response) ->
-      callback(response)
+      callback JSON.parse(response.entity)
 
 class Profile
   constructor: (json) ->

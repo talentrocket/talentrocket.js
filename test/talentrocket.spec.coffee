@@ -26,4 +26,4 @@ describe 'Profile', ->
     it 'return profile', ->
       talentrocket.Config.set_api_key('xxx')
       talentrocket.Profile.find_by (name: 'georgedrummond'), (response) ->
-        expect(response.entity).to.eql 33
+        expect(response).to.eql 33
