@@ -1,18 +1,21 @@
 rest = require('rest')
 
 root = exports ? this
-root.talentrocket = {}
+root.api = {}
 
-exports = root.talentrocket
+exports = root.api
+
+api_key = (@api_key) ->
 
 class Request
-  @get: (url) ->
+  @get: (url, callback) ->
     request = 
       path: "https://api.talentrocket.io/v1#{url}", 
       method: 'GET'
     
     rest(request).then (response) ->
       console.log response
+      callback(response)
 
 class Profile
   constructor: (json) ->
@@ -21,9 +24,9 @@ class Profile
   toJson: ->
     @json
 
-  @find_by: (opts) ->
-    Request.get("/profiles?search=#{opts['name']}")
-
+  @find_by: (opts, callback) ->
+    #Request.get("/profiles?search=#{opts['name']}")
+    Request.get('/profiles', callback)
 
 class Project
   constructor: ->
@@ -34,5 +37,6 @@ class Project
   @find: (name) ->
     console.log name
 
+exports.api_key = api_key
 exports.Profile = Profile
 exports.Project = Project

@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "chai": "^1.9.1",
+    "nock": "0.51.0",
     "coffee-errors": "^0.8.6",
     "coffee-script": "^1.8.0",
     "gulp": "^3.8.6",
