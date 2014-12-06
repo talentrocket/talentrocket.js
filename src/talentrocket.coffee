@@ -1,4 +1,5 @@
-rest = require('rest')
+rest   = require('rest')
+encode = require('rest/mime/type/application/x-www-form-urlencoded')
 
 root = exports ? this
 root.api = {}
@@ -9,12 +10,12 @@ class Config
   @set_api_key: (@api_key) ->
 
 class Request
-  @get: (url, callback) ->
-    request = 
-      path: "https://api.talentrocket.io/v1#{url}&access_token=#{Config.api_key}", 
-      method: 'GET'
-    
-    rest(request).then (response) ->
+  @make: (url, opts, callback) ->
+    opts['path'] = "https://api.talentrocket.io/v1#{url}"
+    opts['params'] ? {}
+    opts['params']['access_token'] = Config.api_key
+
+    rest(opts).then (response) ->
       callback JSON.parse(response.entity)
 
 class Profile
@@ -25,15 +26,14 @@ class Profile
     @json
 
   @find_by: (opts, callback) ->
-    Request.get("/profiles/search?username=#{opts['name']}", callback)
+    Request.make("/profiles/search", { method: 'GET', params: { username: opts['name'] } }, callback)
 
 class Project
-  constructor: ->
+  @find: (opts, callback) ->
+    Request.make("/projects/github_repositories/search", { method: 'GET', params: { name: opts['name'] } }, callback)
 
-  toJson: ->
-    @json
-
-  @find: (name) ->
+  @create: (opts, callback) ->
+    Request.make("/projects/github_repositories", { method: "POST", params: { name: opts['name'] } }, callback)
 
 exports.Config  = Config
 exports.Profile = Profile
